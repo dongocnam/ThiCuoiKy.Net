@@ -5,7 +5,7 @@
 namespace ThiCuoiKy.Net.Migrations
 {
     /// <inheritdoc />
-    public partial class fishshop : Migration
+    public partial class FishShop : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
