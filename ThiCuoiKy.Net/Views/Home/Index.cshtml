@@ -12,15 +12,15 @@
 			<div class="col-sm-4">
 				<div class="product-image-wrapper">
 					<div class="single-products">
-						<a asp-action="Details" asp-controller="Product" asp-route-Id="@item.Id">
 						<div class="productinfo text-center">
+						<a asp-action="Details" asp-controller="Product" asp-route-Id="@item.Id">
 							<img src="~/img/@item.Img" alt="@item.Name" width="100%" />
 							<h2>$@item.Price</h2>
 							<p>Loại: @item.Category.Name</p>
 							<p>Khác:@item.Brand.Name</p>
-							<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-						</div>
 						</a>
+							<a class="btn btn-default add-to-cart" asp-action="Add" asp-controller="Cart" asp-route-Id="@item.Id"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+						</div>
 					</div>
 					
 					<div class="choose">
