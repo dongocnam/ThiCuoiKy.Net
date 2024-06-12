@@ -14,7 +14,7 @@
 					<div class="single-products">
 						<div class="productinfo text-center">
 						<a asp-action="Details" asp-controller="Product" asp-route-Id="@item.Id">
-							<img src="~/img/@item.Img" alt="@item.Name" width="100%" />
+								<img src="~/media/products/@item.Img" alt="@item.Name" width="100%" />
 							<h2>$@item.Price</h2>
 							<p>Loại: @item.Category.Name</p>
 							<p>Khác:@item.Brand.Name</p>
