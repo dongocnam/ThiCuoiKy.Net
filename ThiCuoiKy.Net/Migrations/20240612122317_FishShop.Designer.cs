@@ -11,7 +11,7 @@ using ThiCuoiKy.Net.Repository;
 namespace ThiCuoiKy.Net.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240608035416_FishShop")]
+    [Migration("20240612122317_FishShop")]
     partial class FishShop
     {
         /// <inheritdoc />
@@ -99,7 +99,6 @@ namespace ThiCuoiKy.Net.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Img")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -107,10 +106,9 @@ namespace ThiCuoiKy.Net.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<string>("Slug")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
