@@ -11,7 +11,7 @@ using ThiCuoiKy.Net.Repository;
 namespace ThiCuoiKy.Net.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240612122317_FishShop")]
+    [Migration("20240612191212_FishShop")]
     partial class FishShop
     {
         /// <inheritdoc />
