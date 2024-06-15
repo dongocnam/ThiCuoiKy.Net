@@ -1,278 +1,359 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>FishShop</title>
-    <link href="~/css/bootstrap.min.css" rel="stylesheet">
-    <link href="~/css/font-awesome.min.css" rel="stylesheet">
-    <link href="~/css/prettyPhoto.css" rel="stylesheet">
-    <link href="~/css/price-range.css" rel="stylesheet">
-    <link href="~/css/animate.css" rel="stylesheet">
-    <link href="~/css/main.css" rel="stylesheet">
-    <link href="~/css/responsive.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-    <!-- Thêm link tới Font Awesome từ CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .custom-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
-</head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>FishShop</title>
+	<link href="~/css/bootstrap.min.css" rel="stylesheet">
+	<link href="~/css/font-awesome.min.css" rel="stylesheet">
+	<link href="~/css/prettyPhoto.css" rel="stylesheet">
+	<link href="~/css/price-range.css" rel="stylesheet">
+	<link href="~/css/animate.css" rel="stylesheet">
+	<link href="~/css/main.css" rel="stylesheet">
+	<link href="~/css/responsive.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<link rel="shortcut icon" href="images/ico/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
 <body>
-    <header id="header">
-        <div class="header_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="contactinfo">
-                            <ul class="nav nav-pills">
-                                <li><a href="#"><i class="fa fa-phone"></i> +84 34 981 2460</a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> dongocnam000@gmail.com</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+	<header id="header">
+		<!--header-->
+		<div class="header_top">
+			<!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href="#"><i class="sctr-icon-phone"></i> +84 34 981 2460</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> dongocnam000@gmail.com</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header_top-->
 
-    <div class="header-middle">
-        <div class="container">
-            <div class="row custom-row">
-                <div class="col-sm-2">
-                    <div class="logo">
-                        <a href="index.html"><img src="~/img/logo.png" alt="" style="width: 100px; height: 100px;" /></a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="search_box">
-                        <input type="text" placeholder="Nhập tìm kiếm" />
-                        <i class="fa fa-search"></i>
-                    </div>
-                </div>
-                <div class="col-sm-7">
-                    <div class="shop-menu">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-user"></i> Tài Khoản</a></li>
-                            <li><a href="#"><i class="fa fa-star"></i> Yêu Thích</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Kiểm tra và Thoát</a></li>
-                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
-                            <li><a href="login.html"><i class="fa fa-lock"></i> Đăng Nhập</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		<div class="header-middle">
+			<!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="index.html"><img src="~/img/logo.png" alt=""  style="width: 200px; height: 200px;"/></a>
+						</div>
+						<div class="btn-group pull-right">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+									USA
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="#">Viet Nam</a></li>
+									<li><a href="#">Enlish</a></li>
+								</ul>
+							</div>
+
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+									DOLLAR
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="#">Canadian Dollar</a></li>
+									<li><a href="#">Pound</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a asp-controller="Account"><i class="fa fa-lock"></i> Login</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+
+		<div class="header-bottom">
+			<!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a asp-controller="Home" class="active">Home</a></li>
+												@* chu y cho nnay	 *@
+								<li><a asp-controller="Product">Các loại cá</a></li>
+								<li><a asp-controller="Category">Khác</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+							<input type="text" placeholder="Search" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+
+	<section id="slider">
+		<!--slider-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#slider-carousel" data-slide-to="1"></li>
+							<li data-target="#slider-carousel" data-slide-to="2"></li>
+						</ol>
+
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="col-sm-6">
+									<img src="https://bizweb.dktcdn.net/100/397/029/themes/777984/assets/cat-banner-1.jpg?1630227511462" width="190%" />
+								</div>
+								
+							</div>
+							<div class="item">
+								<div class="col-sm-6">
+									<img src="https://bizweb.dktcdn.net/100/344/954/themes/705100/assets/mid_banner_image_2.jpg?1714960342259" width="190%" />
+								</div>
+							</div>
+
+							<div class="item">
+								<div class="col-sm-6">
+									<img src="https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-ca-Betta-bat-mat-nhat.jpg" width="190%" />
+								</div>
+
+						</div>
+
+						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+							<i class="fa fa-angle-left"></i>
+						</a>
+						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+							<i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section><!--/slider-->
+
+	<section>
+		<div class="container">
+			<div class="row">
+				@Html.Partial("_NotificationPartial")
+				@RenderBody()
+			</div>
+		</div>
+	</section>
+
+	<footer id="footer">
+		<!--Footer-->
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="companyinfo">
+							<h2><span>e</span>-shopper</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe1.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe2.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe3.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe4.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="address">
+							<img src="images/home/map.png" alt="" />
+							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Service</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Online Help</a></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Order Status</a></li>
+								<li><a href="#">Change Location</a></li>
+								<li><a href="#">FAQ’s</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Quock Shop</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">T-Shirt</a></li>
+								<li><a href="#">Mens</a></li>
+								<li><a href="#">Womens</a></li>
+								<li><a href="#">Gift Cards</a></li>
+								<li><a href="#">Shoes</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Policies</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Terms of Use</a></li>
+								<li><a href="#">Privecy Policy</a></li>
+								<li><a href="#">Refund Policy</a></li>
+								<li><a href="#">Billing System</a></li>
+								<li><a href="#">Ticket System</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Company Information</a></li>
+								<li><a href="#">Careers</a></li>
+								<li><a href="#">Store Location</a></li>
+								<li><a href="#">Affillate Program</a></li>
+								<li><a href="#">Copyright</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3 col-sm-offset-1">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<form action="#" class="searchform">
+								<input type="text" placeholder="Your email address" />
+								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+								<p>Get the most recent updates from <br />our site and be updated your self...</p>
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+				</div>
+			</div>
+		</div>
+
+	</footer><!--/Footer-->
 
 
 
-    <div class="header-bottom custom-row-item">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-9">
-                    <div class="mainmenu pull-left">
-                        <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a asp-controller="Home" class="active">Trang Chủ</a></li>
-                            @* chu y cho nnay	 *@
-                            <li><a asp-controller="Product">Các loại cá</a></li>
-                            <li><a asp-controller="Category">Khác</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section id="slider">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div id="slider-carousel" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#slider-carousel" data-slide-to="1"></li>
-                            <li data-target="#slider-carousel" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="row">
-                                    <div class="col-sm-6 w-fit">
-                                        <img src="https://bizweb.dktcdn.net/100/397/029/themes/777984/assets/cat-banner-1.jpg?1630227511462" width="100%" />
-                                    </div>
-                                    <div class="col-sm-6 custom-row">
-                                        <p><h4 class="font-monospace">Tổng hợp 23 loài cá</h4> cảnh siêu đẹp tại Việt Nam, Các loại cá cảnh đẹp không chỉ có sức hút mà còn mang lại những giây phút thư giãn cho chúng ta. Trên thế giới và thị trường Việt Nam, có rất nhiều dòng cá cảnh đẹp khó cưỡng.Sau một ngày làm việc hay những phút mệt mỏi, ngồi ngắm những chú cá tung tăng bơi trong bể, tâm hồn ta được thoải mái hơn. Dưới đây là những dòng cá cảnh dễ nuôi đang được rất nhiều người yêu thích. Nếu bạn thích loại cá nào, hãy để lại bình luận dưới đây để mọi người biết nhé. </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="col-sm-6">
-                                    <img src="https://bizweb.dktcdn.net/100/344/954/themes/705100/assets/mid_banner_image_2.jpg?1714960342259" width="100%" />
-                                </div>
-                                <div class="col-sm-6 custom-row">
-                                    <p>
-                                        <a class="font-monospace">Nuôi cá cảnh</a> là một thú chơi giải trí lành mạnh, tốn kém và tốn thời gian (tùy mức độ). Miễn là chỉ cần bạn thích nuôi cá thì người bán hàng sẽ vét dc tiền từ bạn. Bạn không biết nuôi thì họ bán được nhiều lượt cá, bạn biết kĩ thuật thì họ bán được nhiều đồ chơi.
-                                        Việc nuôi cá không phải mục đích để chúng ta hạnh phúc. Mà là chúng ta làm sao để những con cá của chúng ta hạnh phúc. Niềm vui không phải ở việc nuôi 1 con betta trong một cái chai nước 1.5 lít, thỉnh thoảng thấy đã mắt khi nó căng đuôi khi thấy cá khác.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="col-sm-6">
-                                    <img src="https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-ca-Betta-bat-mat-nhat.jpg" width="100%" />
-                                </div>
-                                <div class="col-sm-6 custom-row">
-                                    <p>
-                                        <h4 class="font-monospace">Cá Betta</h4> hay còn gọi là “cá xiêm đá”, “cá lia thia” thuộc phân họ cá cờ Macropodinae của cá Betta. Cá betta hay Betta splendens là loài cá hoang dã phân bố ở vùng Đông Nam Á bao gồm các nước Thái Lan, Campuchia và Việt Nam. Ngoài môi trường tự nhiên, chúng cư ngụ trong ruộng lúa, ao, đầm… nói chung là ở tất cả những vùng nước nông và tĩnh. Nhiệt độ thích hợp đối với cá betta từ 27 đến 30 độ C, nước mềm, có độ pH trung hoà hay hơi acid.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        $(document).ready(function () {
-            $('#slider-carousel').carousel();
-            var slideInterval = 5000;
-            var $carousel = $('#slider-carousel');
-
-            function startCarousel() {
-                $carousel.carousel('cycle');
-            }
-
-            $carousel.hover(function () {
-                $carousel.carousel('pause');
-            }, function () {
-                startCarousel();
-            });
-
-            $carousel.on('slide.bs.carousel', function () {
-                window.clearInterval(interval);
-                startCarousel();
-            });
-
-            startCarousel();
-        });
-    </script>
-
-    <section>
-        <div class="container">
-            <div class="row">
-                @Html.Partial("_NotificationPartial")
-                @RenderBody()
-            </div>
-        </div>
-    </section>
-
-    <footer id="footer">
-        <!--Footer-->
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer_newsletter text-center">
-                    <h3><i class="fa fa-envelope"></i> Đăng ký để cập nhật thông tin mới nhất về khuyến mãi</h3>
-                    <div class="frm_new">
-                        <div class="contact-form">
-                            <div class="footer_form">
-                                <input class="form-control txtEmail" placeholder="Email" title="Email" id="Newsletters_email" type="email" maxlength="100" value="">
-                                <button type="submit" id="subcrible" class="le-button tp_button btn-submit submit-newsletter">Đăng ký</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-widget">
-            <div class="container">
-                <div class="grid-uniform col-sm-12 col-xs-12">
-                    <div class="footer-1 one-quarter col-md-3 col-sm-6 col-xs-12">
-                        <div class="ft-nav">
-                            <h4>Thông tin</h4>
-                            <p class="text-justify">NMN AQuarium -&nbsp;&nbsp;Mang cả đại dương vào ngôi nhà của bạn!</p>
-
-                            <p class="text-justify">Địa chỉ: 167 Hoàn Văn Thụ - Quy Nhơn -Bình Định</p>
-
-                            <p class="text-justify">Hotline: 0349812460</p>
-
-                            <p class="text-justify">Email: phananhminh24@gmail.com</p>
-
-                            <p class="text-justify">Đại diện bởi: Đỗ Ngọc Nam</p>
-
-                            <p class="text-justify">Mã ĐKKD: 01F8014772 - Ngày cấp:&nbsp;6/15/2024</p>
-
-                            <p class="text-justify">Nơi cấp: UBND Thành Phố Quy Nhơn</p>
-                        </div>
-                    </div>
-                    <div class="footer-2 one-quarter col-md-3 col-sm-6 col-xs-12">
-                        <div class="ft-nav">
-                            <h4>Chính sách mua hàng</h4>
-                            <p><a href="/chinh-sach-mua-hang-n95478.html">Chính sách mua hàng</a></p>
-
-                            <p><a href="/chinh-sach-bao-hanh-n95476.html">Chính sách bảo hành</a></p>
-
-                            <p><a href="/chinh-sach-doi-tra-hang-n95475.html">Chính sách đổi trả hàng</a></p>
-
-                            <p><a href="/chinh-sach-thanh-toan-n95464.html">Chính sách thanh toán</a></p>
-
-                            <p><a href="/chinh-sach-bao-ve-thong-tin-nguoi-tieu-dung-n95477.html">Chính sách bảo vệ thông tin người tiêu dùng</a></p>
-                        </div>
-                    </div>
-                    <div class="footer-3 one-quarter col-md-3 col-sm-6 col-xs-12">
-                        <div class="ft-nav">
-                            <h4>Danh mục</h4>
-                            <p><a href="https://cacanhthienduc.com/chia-se-bi-quyet-tao-be-ca-canh-tai-nha-cho-nguoi-moi">Chia sẻ kinh nghiệm</a></p>
-
-                            <p><a href="https://www.facebook.com/MinhChanhKun97">Hướng dẫn ép đẻ cá cảnh</a></p>
-
-                            <p><a href="https://cacanhthienduc.com/chia-se-bi-quyet-tao-be-ca-canh-tai-nha-cho-nguoi-moi">Chăm sóc cá cảnh</a></p>
-
-                            <p><a href="https://tepbac.com/tin-tuc/full/tong-hop-23-loai-ca-canh-sieu-dep-tai-viet-nam-35762.html">Hỏi đáp</a></p>
-
-                            <p><a href="http://online.gov.vn/Home/WebDetails/91286" target="_blank" rel="noreferrer noopener"><img alt="" src="https://pos.nvncdn.com/9cbf28-23894/contentKey/20220119_CFP8Wkl616ZN.png" style="width:300px;height:114px;"></a></p>
-                        </div>
-                    </div>
-
-                    <div class="footer-4 one-quarter col-md-3 col-sm-6 col-xs-12">
-                        <div class="ft-nav">
-                            <h4>Đăng ký nhận tin</h4>
-                            <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/MinhChanhKun97" data-hide-cover="false" data-show-facepile="true" data-show-posts="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=160401417920369&amp;container_width=265&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fkingaqua.vn&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false"><span style="vertical-align: bottom; width: 265px; height: 130px;"><iframe name="f911b0ee4e9ed7aa7" width="1000px" height="1000px" data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.11/plugins/page.php?app_id=160401417920369&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df374f03c61aa81373%26domain%3Dkingaqua.vn%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fkingaqua.vn%252Ffdf2c6714159fbd8c%26relation%3Dparent.parent&amp;container_width=265&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fkingaqua.vn&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false" style="border: none; visibility: visible; width: 265px; height: 130px;" class=""></iframe></span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="~/js/jquery.js"></script>
-    <script src="~/js/bootstrap.min.js"></script>
-    <script src="~/js/jquery.scrollUp.min.js"></script>
-    <script src="~/js/price-range.js"></script>
-    <script src="~/js/jquery.prettyPhoto.js"></script>
-    <script src="~/js/main.js"></script>
+	<script src="~/js/jquery.js"></script>
+	<script src="~/js/bootstrap.min.js"></script>
+	<script src="~/js/jquery.scrollUp.min.js"></script>
+	<script src="~/js/price-range.js"></script>
+	<script src="~/js/jquery.prettyPhoto.js"></script>
+	<script src="~/js/main.js"></script>
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
