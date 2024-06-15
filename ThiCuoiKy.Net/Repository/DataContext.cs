@@ -5,7 +5,7 @@ using ThiCuoiKy.Net.Models;
 
 namespace ThiCuoiKy.Net.Repository
 {
-	public class DataContext : IdentityDbContext
+	public class DataContext : IdentityDbContext<AppUserModel>
 	{
 		public DataContext(DbContextOptions<DataContext> options) : base(options)
 		{
