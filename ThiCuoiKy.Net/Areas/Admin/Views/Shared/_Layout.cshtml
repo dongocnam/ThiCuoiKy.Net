@@ -28,6 +28,33 @@
 	<header id="header">
 	
 		<div class="header-middle">
+			<div class="container">
+				<div class="row custom-row">
+					<div class="col-sm-2">
+						<div class="logo">
+							<a href="index.html"><img src="~/img/logo.png" alt="" style="width: 100px; height: 100px;" /></a>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="search_box">
+							<input type="text" placeholder="Nhập tìm kiếm" />
+							<i class="fa fa-search"></i>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<div class="shop-menu">
+							<ul class="nav navbar-nav">
+								<li><a href="#"><i class="fa fa-user"></i> Tài Khoản</a></li>
+								<li><a href="#"><i class="fa fa-star"></i> Yêu Thích</a></li>
+								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Thanh toánn</a></li>
+								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
+								<li><a asp-controller="Account"><i class="fa fa-lock"></i> Đăng Nhập</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 			
 
 		<div class="header-bottom">
@@ -41,6 +68,7 @@
 									<li><a asp-controller="Product">Các loại cá</a></li>
 									<li><a asp-controller="Brand">Các dòng sản phẩm</a></li>
 									<li><a asp-controller="Category">Khác</a></li>
+									<li><a asp-controller="Order" asp-action="Index">Đơn hàng</a></li>
 							</ul>
 						</div>
 					</div>
@@ -75,7 +103,7 @@
 	<script src="~/js/price-range.js"></script>
 	<script src="~/js/jquery.prettyPhoto.js"></script>
 	<script src="~/js/main.js"></script>
-
+	
 	@await RenderSectionAsync("Scripts", required:false)
 </body>
 </html>

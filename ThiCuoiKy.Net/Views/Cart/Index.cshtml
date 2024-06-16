@@ -54,13 +54,19 @@
 							</td>
 						</tr>
 						}
-						<tr rowspan = "6">
+						<tr rowspan = "5">
 							<td colspan="6">
 								Tổng tiền: @Model.GrandTotal.ToString()
 							</td>
 							<td>
 								<a class="btn btn-danger btn-sm" asp-controller="Cart" asp-action="Clear"> Xóa Toàn Bộ </a>
 							</td>
+							@if (User.Identity?.IsAuthenticated ?? false)
+							{
+								<td>
+									<a class="btn btn-primary btn-sm" asp-controller="Checkout" asp-action="Checkout"> Thanh toán</a>
+								</td>
+							}
 						</tr>
 					}else
 					{

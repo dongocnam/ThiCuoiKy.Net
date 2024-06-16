@@ -7,10 +7,12 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Linq;
 using System;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ThiCuoiKy.Net.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly DataContext _dataContext;

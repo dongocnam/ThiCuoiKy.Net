@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +11,7 @@ using ThiCuoiKy.Net.Repository;
 namespace ThiCuoiKy.Net.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class BrandController : Controller
     {
         private readonly DataContext _dataContext;
