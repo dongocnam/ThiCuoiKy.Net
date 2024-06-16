@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +14,10 @@ using ThiCuoiKy.Net.Repository;
 namespace ThiCuoiKy.Net.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class CategoryController : Controller
     {
         private readonly DataContext _dataContext;
-        private readonly IWebHostEnvironment _webHostEnvironment;
 
         public CategoryController(DataContext context)
         {

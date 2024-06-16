@@ -67,11 +67,26 @@
                 <div class="col-sm-7">
                     <div class="shop-menu">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-user"></i> Tài Khoản</a></li>
-                            <li><a href="#"><i class="fa fa-star"></i> Yêu Thích</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Kiểm tra và Thoát</a></li>
-                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
-                            <li><a href="login.html"><i class="fa fa-lock"></i> Đăng Nhập</a></li>
+
+                            <li><a asp-controller="Cart"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
+                            @if (User.Identity?.IsAuthenticated ?? false)
+                            {
+                                <li>
+                                    <a asp-controller="Account" asp-action="Logout">
+                                        <i class="fa fa-lock"></i>Hi! @User.Identity.Name , Đăng xuất
+                                    </a>
+                                </li>
+                                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Thoát</a></li>
+                                <li><a href="#"><i class="fa fa-user"></i> Tài Khoản</a></li>
+                                <li><a href="#"><i class="fa fa-star"></i> Yêu Thích</a></li>
+                            }else
+                            {
+                                <li>
+                                    <a asp-controller="Account" asp-action="Login">
+                                        <i class="fa fa-lock"></i>Đăng nhập
+                                    </a>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>
@@ -91,7 +106,7 @@
                             <li><a asp-controller="Home" class="active">Trang Chủ</a></li>
                             @* chu y cho nnay	 *@
                             <li><a asp-controller="Product">Các loại cá</a></li>
-                            <li><a asp-controller="Category">Khác</a></li>
+                            <li><a asp-controller="Category"> Khác </a></li>
                         </ul>
                     </div>
                 </div>
@@ -269,6 +284,17 @@
         </div>
     </footer>
 
+<<<<<<< HEAD
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.scrollUp.min.js"></script>
+    <script src="~/js/price-range.js"></script>
+    <script src="~/js/jquery.prettyPhoto.js"></script>
+    <script src="~/js/main.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+    
+=======
 
 	<script src="~/js/jquery.js"></script>
 	<script src="~/js/bootstrap.min.js"></script>
@@ -277,5 +303,6 @@
 	<script src="~/js/jquery.prettyPhoto.js"></script>
 	<script src="~/js/main.js"></script>
 	@await RenderSectionAsync("Scripts", required: false)
+>>>>>>> 01f63f809f92c61af3f16ac4e3f3f58f5ef62898
 </body>
 </html>

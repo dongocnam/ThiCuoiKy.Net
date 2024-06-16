@@ -1,0 +1,18 @@
+﻿@model ThiCuoiKy.Net.Models.OrderModel
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<h1>Order Details</h1>
+
+<div>
+    <h3>Order ID: @Model.Id</h3>
+    <p>Order Code: @Model.OrderCode</p>
+    <p>User Name: @Model.UserName</p>
+    <p>Created Date: @Model.CreatedDate</p>
+    <p>Status: @Model.Status</p>
+</div>
+
+<a asp-action="Index">Back to Orders List</a>
+
