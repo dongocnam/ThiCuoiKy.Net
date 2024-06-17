@@ -13,10 +13,6 @@
     <link href="~/css/animate.css" rel="stylesheet">
     <link href="~/css/main.css" rel="stylesheet">
     <link href="~/css/responsive.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -27,8 +23,13 @@
     <style>
         .custom-row {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: center; /* Căn giữa theo chiều dọc */
+            justify-content: space-between; /* Căn đều các phần tử, logo bên trái, menu bên phải */
+        }
+
+        .shop-menu {
+            display: flex;
+            justify-content: flex-end; /* Căn menu về lề phải */
         }
     </style>
 </head>
@@ -41,7 +42,7 @@
                         <div class="contactinfo">
                             <ul class="nav nav-pills">
                                 <li><a href="#"><i class="fa fa-phone"></i> +84 34 981 2460</a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> dongocnam000@gmail.com</a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> nmnaquarium2024@gmail.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -55,19 +56,12 @@
             <div class="row custom-row">
                 <div class="col-sm-2">
                     <div class="logo">
-                        <a href="index.html"><img src="~/img/logo.png" alt="" style="width: 100px; height: 100px;" /></a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="search_box">
-                        <input type="text" placeholder="Nhập tìm kiếm" />
-                        <i class="fa fa-search"></i>
+                        <a href="index.html"><img src="~/img/logo.png" alt="" style="width: 150px; height: 150px;" /></a>
                     </div>
                 </div>
                 <div class="col-sm-7">
                     <div class="shop-menu">
                         <ul class="nav navbar-nav">
-
                             <li><a asp-controller="Cart"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
                             @if (User.Identity?.IsAuthenticated ?? false)
                             {
@@ -79,7 +73,8 @@
                                 <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Thoát</a></li>
                                 <li><a href="#"><i class="fa fa-user"></i> Tài Khoản</a></li>
                                 <li><a href="#"><i class="fa fa-star"></i> Yêu Thích</a></li>
-                            }else
+                            }
+                            else
                             {
                                 <li>
                                     <a asp-controller="Account" asp-action="Login">
@@ -94,25 +89,7 @@
         </div>
     </div>
 
-
-
-    <div class="header-bottom custom-row-item">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-9">
-                    <div class="mainmenu pull-left">
-                        <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a asp-controller="Home" class="active">Trang Chủ</a></li>
-                            @* chu y cho nnay	 *@
-                            <li><a asp-controller="Product">Các loại cá</a></li>
-                            <li><a asp-controller="Category"> Khác </a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+ 
 
     <section id="slider">
         <div class="container">
@@ -284,7 +261,6 @@
         </div>
     </footer>
 
-<<<<<<< HEAD
     <script src="~/js/jquery.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/jquery.scrollUp.min.js"></script>
@@ -293,16 +269,6 @@
     <script src="~/js/main.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
-    
-=======
 
-	<script src="~/js/jquery.js"></script>
-	<script src="~/js/bootstrap.min.js"></script>
-	<script src="~/js/jquery.scrollUp.min.js"></script>
-	<script src="~/js/price-range.js"></script>
-	<script src="~/js/jquery.prettyPhoto.js"></script>
-	<script src="~/js/main.js"></script>
-	@await RenderSectionAsync("Scripts", required: false)
->>>>>>> 01f63f809f92c61af3f16ac4e3f3f58f5ef62898
 </body>
 </html>

@@ -12,7 +12,7 @@ using ThiCuoiKy.Net.Repository;
 namespace ThiCuoiKy.Net.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240616072911_CreateCheckout")]
+    [Migration("20240616115900_CreateCheckout")]
     partial class CreateCheckout
     {
         /// <inheritdoc />
@@ -280,6 +280,61 @@ namespace ThiCuoiKy.Net.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("ThiCuoiKy.Net.Models.OrderDetailModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("OrderCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderDetail");
+                });
+
+            modelBuilder.Entity("ThiCuoiKy.Net.Models.OrderModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OrderCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Orders");
+                });
+
             modelBuilder.Entity("ThiCuoiKy.Net.Models.ProductModel", b =>
                 {
                     b.Property<int>("Id")
@@ -369,6 +424,17 @@ namespace ThiCuoiKy.Net.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ThiCuoiKy.Net.Models.OrderDetailModel", b =>
+                {
+                    b.HasOne("ThiCuoiKy.Net.Models.ProductModel", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ThiCuoiKy.Net.Models.ProductModel", b =>
