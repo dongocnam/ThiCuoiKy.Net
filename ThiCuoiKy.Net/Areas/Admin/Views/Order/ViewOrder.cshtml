@@ -1,18 +1,31 @@
-﻿@model ThiCuoiKy.Net.Models.OrderModel
+﻿@model IEnumerable<ThiCuoiKy.Net.Models.OrderDetailModel>
 
 @{
     ViewData["Title"] = "Order Details";
 }
 
-<h1>Order Details</h1>
+<h2>Chi tiết đặc hàng</h2>
 
-<div>
-    <h3>Order ID: @Model.Id</h3>
-    <p>Order Code: @Model.OrderCode</p>
-    <p>User Name: @Model.UserName</p>
-    <p>Created Date: @Model.CreatedDate</p>
-    <p>Status: @Model.Status</p>
-</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Tổng</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Product.Name</td>
+                <td>@item.Price.ToString("C")</td>
+                <td>@item.Quantity</td>
+                <td>@(item.Price * item.Quantity)</td>
+            </tr>
+        }
+    </tbody>
+</table>
 
-<a asp-action="Index">Back to Orders List</a>
-
+<p>Tổng hóa đơn: @Model.Sum(item => item.Price * item.Quantity).ToString("C")</p>

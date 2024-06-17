@@ -24,10 +24,49 @@ namespace ThiCuoiKy.Net.Areas.Admin.Controllers
         }
         public async Task<IActionResult> ViewOrder(string ordercode)
         {
-            var DetailsOrder = await _dataContext.OrderDetail.Include(od => od.Product).Where(od=>od.OrderCode==ordercode).ToListAsync();
-            return View(DetailsOrder);                           
+            if (string.IsNullOrEmpty(ordercode))
+            {
+                return NotFound();
+            }
 
+            var orderDetails = await _dataContext.OrderDetail
+                                                 .Include(od => od.Product)
+                                                 .Where(od => od.OrderCode == ordercode)
+                                                 .ToListAsync();
+
+            if (orderDetails == null || !orderDetails.Any())
+            {
+                return NotFound();
+            }
+
+            return View(orderDetails);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteOrder(string ordercode)
+        {
+            if (string.IsNullOrEmpty(ordercode))
+            {
+                return NotFound();
+            }
 
+            var order = await _dataContext.Orders
+                                          .FirstOrDefaultAsync(o => o.OrderCode == ordercode);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            var orderDetails = await _dataContext.OrderDetail
+                                                 .Where(od => od.OrderCode == ordercode)
+                                                 .ToListAsync();
+
+            _dataContext.OrderDetail.RemoveRange(orderDetails);
+            _dataContext.Orders.Remove(order);
+            await _dataContext.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

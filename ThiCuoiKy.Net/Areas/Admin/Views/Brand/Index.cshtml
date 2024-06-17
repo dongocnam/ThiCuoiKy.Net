@@ -1,22 +1,25 @@
 ﻿@model IEnumerable<ThiCuoiKy.Net.Models.BrandModel>
 
-<h2>Brand List</h2>
+<h2>Danh sách dòng sản phẩm</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Tạo mới</a>
 </p>
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                <label>Tên</label>
+                @* @Html.DisplayNameFor(model => model.Name) *@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+                <label>Mô tả</label>
+                @* @Html.DisplayNameFor(model => model.Description) *@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Status)
+                <label>Trạng thái</label>
+                @* @Html.DisplayNameFor(model => model.Status) *@
             </th>
             <th></th>
         </tr>
@@ -35,8 +38,8 @@
                     @Html.DisplayFor(modelItem => item.Status)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" class="btn btn-warning btn-sm" asp-route-id="@item.Id">Sửa</a>
+                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-route-id="@item.Id">Xóa</a>
                 </td>
             </tr>
         }

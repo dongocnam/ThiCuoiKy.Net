@@ -1,41 +1,96 @@
-﻿@model IEnumerable<ProductModel>
+﻿@model X.PagedList.IPagedList<ProductModel>
+@using X.PagedList.Mvc.Core
+
 <div class="col-sm-3">
-	@Html.Partial("_Sidebar")
+    @Html.Partial("_Sidebar")
 </div>
 
 <div class="col-sm-9 padding-right">
-	<div class="features_items">
-		<!--features_items-->
-		<h2 class="title text-center">Sản phẩm</h2>
-		@foreach (var item in Model)
-		{
-			<div class="col-sm-4">
-				<div class="product-image-wrapper">
-					<div class="single-products">
-						<div class="productinfo text-center">
-						<a asp-action="Details" asp-controller="Product" asp-route-Id="@item.Id">
-								<img src="~/media/products/@item.Img" alt="@item.Name" width="100%" />
-							<h2>$@item.Price</h2>
-							<p>Loại: @item.Category.Name</p>
-							<p>Khác:@item.Brand.Name</p>
-						</a>
-							<a class="btn btn-default add-to-cart" asp-action="Add" asp-controller="Cart" asp-route-Id="@item.Id"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-						</div>
-					</div>
-					
-					<div class="choose">
-						<ul class="nav nav-pills nav-justified">
-							<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-							<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		}
-	</div><!--features_items-->
-	
+    <div class="features_items">
+        <!-- Search Form -->
+        <div class="search-form">
+            <form asp-controller="Home" asp-action="Search" method="get">
+                <input type="text" name="searchString" placeholder="Nhập tìm kiếm...">
+                <button type="submit" class="btn btn-default">Tìm kiếm</button>
+            </form>
+        </div>
 
+        <!-- Product List -->
+        <h2 class="title text-center" style="color:red">Sản phẩm</h2>
+        @if (Model.Any())
+        {
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                        <div class="single-products">
+                            <div class="productinfo text-center">
+                                <a asp-action="Details" asp-controller="Product" asp-route-Id="@item.Id">
+                                    <img src="~/media/products/@item.Img" alt="@item.Name" width="100%" />
+                                    <h2>$@item.Price</h2>
+                                    <p>Tên: @item.Name</p>
+                                    <p>Loại: @item.Category.Name</p>
+                                    <p>Khác: @item.Brand.Name</p>
+                                </a>
+                                <a class="btn btn-default add-to-cart" asp-action="Add" asp-controller="Cart" asp-route-Id="@item.Id"><i class="fa fa-shopping-cart"></i>Mua</a>
+                            </div>
+                        </div>
 
+                        <div class="choose">
+                            <ul class="nav nav-pills nav-justified">
+                                <li><a href="#"><i class="fa fa-plus-square"></i>Thêm vào dánh sách yêu thích</a></li>
+                                <li><a href="#"><i class="fa fa-plus-square"></i>Thêm vào để so sánh</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+            <!-- Pagination -->
+            <div class="pagination-wrapper">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions
+       {
+           DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+           DisplayLinkToNextPage = PagedListDisplayMode.Always,
+           DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+           DisplayLinkToLastPage = PagedListDisplayMode.Always,
+           DisplayLinkToIndividualPages = true,
+           DisplayEllipsesWhenNotShowingAllPageNumbers = true,
+           Display = PagedListDisplayMode.IfNeeded
+       })
+            </div>
+        }
+        else
+        {
+            <p>Không tìm thấy sản phẩm nào.</p>
+        }
+    </div><!-- features_items -->
+</div>
+<style>
+    .pagination-wrapper {
+        text-align: center;
+        margin-top: 20px;
+    }
 
+        .pagination-wrapper .pagination {
+            display: inline-block;
+        }
 
+            .pagination-wrapper .pagination li {
+                display: inline;
+                margin: 0 5px;
+            }
+
+                .pagination-wrapper .pagination li a {
+                    padding: 10px 15px;
+                    color: #333;
+                    text-decoration: none;
+                    border: 1px solid #ddd;
+                }
+
+                    .pagination-wrapper .pagination li a:hover,
+                    .pagination-wrapper .pagination li.active a {
+                        background-color: #f4f4f4;
+                        border-color: #ddd;
+                    }
+</style>
 </div>

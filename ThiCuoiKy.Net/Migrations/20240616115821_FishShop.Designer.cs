@@ -12,8 +12,8 @@ using ThiCuoiKy.Net.Repository;
 namespace ThiCuoiKy.Net.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240616082637_EditProductId")]
-    partial class EditProductId
+    [Migration("20240616115821_FishShop")]
+    partial class FishShop
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -294,8 +294,8 @@ namespace ThiCuoiKy.Net.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<long>("ProductId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -304,6 +304,8 @@ namespace ThiCuoiKy.Net.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("OrderDetail");
                 });
@@ -422,6 +424,17 @@ namespace ThiCuoiKy.Net.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ThiCuoiKy.Net.Models.OrderDetailModel", b =>
+                {
+                    b.HasOne("ThiCuoiKy.Net.Models.ProductModel", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ThiCuoiKy.Net.Models.ProductModel", b =>

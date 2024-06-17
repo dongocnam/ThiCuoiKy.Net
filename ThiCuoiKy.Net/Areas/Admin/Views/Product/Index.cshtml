@@ -1,9 +1,10 @@
 ﻿@model IEnumerable<ProductModel>
 @{
     ViewData["title"] = "Product Listed";
+    var counter = 1; // Initialize the counter
 }
-<h3>List Product</h3>
-<a asp-action="Create" asp-controller="Category">Add Product</a>
+<h3>Danh sách sản phẩm</h3>
+<a asp-action="Create" asp-controller="Product">Thêm Sản Phẩm</a>
 
 <table class="table">
     <thead>
@@ -21,17 +22,18 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td scope="row">@item.Id</td>
+                <td scope="row">@counter</td> <!-- Use the counter variable here -->
                 <td>@item.Name</td>
                 <td style="width: 430px ">@Html.Raw(item.Description)</td>
                 <td>@item.Price</td>
                 <td>@item.Brand.Name</td>
                 <td><img src="~/media/products/@item.Img" width="120"></td>
                 <td>
-                    <a asp-action="Edit" class="btn btn-warning btn-sm" asp-controller="Product" asp-route-Id="@item.Id">Edit</a>
-                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-controller="Product" asp-route-Id="@item.Id">Delete</a>
+                    <a asp-action="Edit" class="btn btn-warning btn-sm" asp-controller="Product" asp-route-Id="@item.Id">Sửa</a>
+                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-controller="Product" asp-route-Id="@item.Id">Xóa</a>
                 </td>
             </tr>
+            counter++; // Increment the counter
         }
     </tbody>
 </table>
